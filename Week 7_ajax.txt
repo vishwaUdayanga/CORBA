@@ -1,0 +1,8 @@
+Instructions:
+
+1.Try the AJAX Examples
+https://www.w3schools.com/xml/ajax_examples.asp
+
+2. Try the following FetchAPI tutorial
+https://www.javascripttutorial.net/web-apis/javascript-fetch-api/
+

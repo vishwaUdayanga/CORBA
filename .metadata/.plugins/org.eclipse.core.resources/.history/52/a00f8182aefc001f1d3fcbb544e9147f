@@ -1,0 +1,40 @@
+PARSER_BEGIN(Hello)
+
+import java.io.StringReader;
+
+public class Hello {
+	public static void main(String[] args) {
+		try {
+			Hello hello = new Hello(new StringReader(args[0]));
+			System.out.println("Syntax is okay!");
+			Hello.words();
+		} catch (Exception e) {
+			System.out.println("Error");
+		}
+	}
+}
+
+PARSER_END(Hello)
+
+SKIP: {" "|"\t"|"\n"|"\r"}
+
+TOKEN: { <WORD: (["a"-"z"])+ >}
+TOKEN: { <INT: (["0"-"9"])+ > }
+
+void words(): 
+{
+	int id=0;
+}
+{
+	<WORD>
+		{
+			id++;
+			System.out.println(id+" word");
+		}
+	<INT>
+		{
+			id++;
+			System.out.println(id+" id");
+		}
+	<EOF>
+}
